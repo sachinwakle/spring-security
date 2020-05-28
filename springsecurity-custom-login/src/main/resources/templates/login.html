@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Login page</title>
+  </head>
+  <body>
+    <h1>Sawa Login page</h1>
+    <p th:if="${param.error}" class="error">Wrong user or password</p>
+    <p th:if="${param.logout}" class="alert alert-success">You have been logged out</p>
+    <form th:action="@{/login}" method="post">
+	    <fieldset>
+	      <label for="username">Username</label>:
+	      <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+	      <label for="password">Password</label>:
+	      <input type="password" id="password" name="password" /> <br />
+	      <input type="submit" value="Log in" />
+	    </fieldset>
+    </form>
+  </body>
+</html>
